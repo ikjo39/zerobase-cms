@@ -1,14 +1,16 @@
 package com.zerobase.cms.user.application;
 
+import org.springframework.stereotype.Service;
+
 import com.zerobase.cms.domain.common.UserType;
 import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
 import com.zerobase.cms.user.domain.SignInForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.exception.CustomException;
 import com.zerobase.cms.user.exception.ErrorCode;
-import com.zerobase.cms.user.service.CustomerService;
+import com.zerobase.cms.user.service.customer.CustomerService;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

@@ -1,20 +1,21 @@
 package com.zerobase.cms.user.service;
 
-import static com.zerobase.cms.user.exception.ErrorCode.ALREADY_VERIFIED;
-import static com.zerobase.cms.user.exception.ErrorCode.EXPIRED_CODE;
-import static com.zerobase.cms.user.exception.ErrorCode.NOT_FOUND_USER;
-import static com.zerobase.cms.user.exception.ErrorCode.WRONG_VERIFICATION;
+import static com.zerobase.cms.user.exception.ErrorCode.*;
 
-import com.zerobase.cms.user.domain.SignUpForm;
-import com.zerobase.cms.user.domain.model.Customer;
-import com.zerobase.cms.user.exception.CustomException;
-import com.zerobase.cms.user.repository.CustomerRepository;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Optional;
+
 import javax.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
+
+import com.zerobase.cms.user.domain.SignUpForm;
+import com.zerobase.cms.user.domain.model.Customer;
+import com.zerobase.cms.user.domain.repository.CustomerRepository;
+import com.zerobase.cms.user.exception.CustomException;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
