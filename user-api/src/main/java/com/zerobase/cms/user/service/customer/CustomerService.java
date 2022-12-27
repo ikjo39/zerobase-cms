@@ -1,15 +1,17 @@
-package com.zerobase.cms.user.service;
+package com.zerobase.cms.user.service.customer;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
 
 import com.zerobase.cms.user.domain.model.Customer;
-import com.zerobase.cms.user.repository.CustomerRepository;
-import java.util.Optional;
+import com.zerobase.cms.user.domain.repository.CustomerRepository;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
-
 	private final CustomerRepository customerRepository;
 
 	public Optional<Customer> findByIdAndEmail(Long id, String email) {

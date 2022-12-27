@@ -40,6 +40,9 @@ public class Customer extends BaseEntity{
 	private String verificationCode;
 	private boolean verify;
 
+	@Column(columnDefinition = "int default 0")
+	private Integer balance;
+
 	// 기본적인 validation 고민 해보기
 	public static Customer from(SignUpForm form) {
 		return Customer.builder()
