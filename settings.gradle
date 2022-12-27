@@ -1,4 +1,6 @@
 rootProject.name = 'zerobase-cms'
 include 'user-api'
-include 'order-api'
 include 'zerobase-domain'
+include 'order-api'
+include 'order-api'
+
