@@ -1,21 +1,20 @@
-package com.zerobase.cms.user.service;
+package com.zerobase.cms.user.service.customer;
 
-import static com.zerobase.cms.user.exception.ErrorCode.*;
-
-import java.time.LocalDateTime;
-import java.util.Locale;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.springframework.stereotype.Service;
+import static com.zerobase.cms.user.exception.ErrorCode.ALREADY_VERIFIED;
+import static com.zerobase.cms.user.exception.ErrorCode.EXPIRED_CODE;
+import static com.zerobase.cms.user.exception.ErrorCode.NOT_FOUND_USER;
+import static com.zerobase.cms.user.exception.ErrorCode.WRONG_VERIFICATION;
 
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
-import com.zerobase.cms.user.domain.repository.CustomerRepository;
 import com.zerobase.cms.user.exception.CustomException;
-
+import com.zerobase.cms.user.domain.repository.CustomerRepository;
+import java.time.LocalDateTime;
+import java.util.Locale;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +32,7 @@ public class SignUpCustomerService {
 	}
 
 	@Transactional
-	public void verifyEMail(String email, String code) {
+	public void verifyEmail(String email, String code) {
 		Customer customer = customerRepository.findByEmail(email)
 			.orElseThrow(() -> new CustomException(NOT_FOUND_USER));
 		if (customer.isVerify()) {
