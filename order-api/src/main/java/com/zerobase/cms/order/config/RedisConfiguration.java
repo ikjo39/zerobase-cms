@@ -15,7 +15,6 @@ public class RedisConfiguration {
 		RedisConnectionFactory redisConnectionFactory) {
 		RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
 		StringRedisSerializer serializer = new StringRedisSerializer();
-
 		redisTemplate.setConnectionFactory(redisConnectionFactory);
 		redisTemplate.setKeySerializer(serializer);
 		redisTemplate.setValueSerializer(serializer);
