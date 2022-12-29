@@ -1,6 +1,5 @@
 package com.zerobase.cms.order.domain.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,7 +35,7 @@ public class ProductItem extends BaseEntity {
 	@Audited
 	private Integer price;
 	private Integer count;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
 
