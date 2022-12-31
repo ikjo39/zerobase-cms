@@ -33,6 +33,7 @@ public class ProductDto {
 			.build();
 	}
 
+	// Items는 넣지 않기 위함
 	public static ProductDto withoutItemsfrom(Product product) {
 		return ProductDto.builder()
 			.id(product.getId())
