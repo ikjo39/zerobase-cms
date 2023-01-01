@@ -51,9 +51,4 @@ public class ProductService {
 		productRepository.delete(product);
 		return product.getName();
 	}
-
-	public Product getByProductId(Long productId) {
-		return productRepository.findById(productId)
-			.orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
-	}
 }
