@@ -1,0 +1,67 @@
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "2022-12-27",
+  "email": "namasute42@gmail.com",
+  "name": "myName",
+  "password": "pw",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/customer/verify?email=namasute42@gmail.com&code=f5eNjxfx4V
+Content-Type: application/json
+
+### 로그인 (고객)
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "namasute42@gmail.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIrZDlsamZVYXBQUmpKMVdGODFRaGp2NGlRL2ZZVTV5aW5ORnN6ZzBjZDFBPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTY3MjMxMDY5OCwiZXhwIjoxNjcyMzk3MDk4fQ.SAyFd2fJ1oy747uF986M4ERemoMXFj1v1ZlE1KGL4-8
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIrZDlsamZVYXBQUmpKMVdGODFRaGp2NGlRL2ZZVTV5aW5ORnN6ZzBjZDFBPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGUiOiJDVVNUT01FUiIsImlhdCI6MTY3MjY0MTI5OCwiZXhwIjoxNjcyNzI3Njk4fQ.Nzx__Je89m_qqqGVlKD6IGess4SUuD7gP7ShSUzcfQM
+
+{
+  "from": "server",
+  "message": "돈충전",
+  "money": 1000000
+}
+#######################
+
+### 회원 가입 (셀러)
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "2022-12-27",
+  "email": "namasute42@gmail.com",
+  "name": "hi",
+  "password": "pw",
+  "phone": "01011112222"
+}
+
+### 이메일 인증 (셀러)
+GET http://localhost:8081/signup/seller/verify?email=namasute42@gmail.com&code=OjX12OHFql
+Content-Type: application/json
+
+
+### 로그인 (고객)
+POST http://localhost:8081/signin/customer
+Content-Type: application/json
+
+{
+  "email": "namasute42@gmail.com",
+  "password": "pw"
+}
