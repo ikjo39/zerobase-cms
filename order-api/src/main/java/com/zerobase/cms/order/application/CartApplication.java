@@ -53,6 +53,7 @@ public class CartApplication {
 	public Cart getCart(Long customerId) {
 		// 메세지를 보고 난 다음에는 , 이미 본 메세지는 스팸이 되기 때문에 제거한다.
 		Cart cart = refreshCart(cartService.getCart(customerId));
+		cartService.putCart(customerId, cart);
 		Cart returnCart = new Cart();
 		returnCart.setCustomerId(cart.getCustomerId());
 		returnCart.setProducts(cart.getProducts());
