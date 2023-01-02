@@ -41,6 +41,8 @@ public class CartApplication {
 		return cartService.addCart(customerId, form);
 	}
 
+	// 엣지 케이스
+	// 카트를 바꾼 후 refreshCart의 로직을 이용함(수량 변경, 항목 제거) 가격 변동은 서버 판단
 	public Cart updateCart(Long memberId, Cart basket) {
 		cartService.putCart(memberId, basket);
 		return getCart(memberId);
