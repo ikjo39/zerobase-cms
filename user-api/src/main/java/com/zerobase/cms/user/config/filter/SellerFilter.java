@@ -10,8 +10,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import com.zerobase.cms.domain.common.UserVo;
-import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
+import org.zerobase.cms.domain.common.UserVo;
+import org.zerobase.cms.domain.config.JwtAuthenticationProvider;
+
 import com.zerobase.cms.user.service.seller.SellerService;
 
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class SellerFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 		throws IOException, ServletException {
-		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
 		String token = httpServletRequest.getHeader("X-AUTH-TOKEN");
 		if (!jwtAuthenticationProvider.validateToken(token)) {
 			throw new ServletException("Invalid Access");

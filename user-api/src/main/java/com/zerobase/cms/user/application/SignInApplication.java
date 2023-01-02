@@ -1,9 +1,9 @@
 package com.zerobase.cms.user.application;
 
 import org.springframework.stereotype.Service;
+import org.zerobase.cms.domain.common.UserType;
+import org.zerobase.cms.domain.config.JwtAuthenticationProvider;
 
-import com.zerobase.cms.domain.common.UserType;
-import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
 import com.zerobase.cms.user.domain.SignInForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.domain.model.Seller;

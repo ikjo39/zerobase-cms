@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.zerobase.cms.domain.config.JwtAuthenticationProvider;
 
-import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
 import com.zerobase.cms.order.application.CartApplication;
 import com.zerobase.cms.order.application.OrderApplication;
 import com.zerobase.cms.order.domain.redis.AddProductCartForm;
@@ -46,6 +46,7 @@ public class CustomerCartController {
 			cartApplication.updateCart(provider.getUserVo(token).getId(), cart)
 		);
 	}
+
 	@PostMapping("/order")
 	public ResponseEntity<Cart> orderCart(
 		@RequestHeader(name = "X-AUTH-TOKEN") String token,

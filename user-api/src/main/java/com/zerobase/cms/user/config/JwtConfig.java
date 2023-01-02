@@ -1,6 +1,6 @@
 package com.zerobase.cms.user.config;
 
-import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
+import org.zerobase.cms.domain.config.JwtAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,7 +1,7 @@
 package com.zerobase.cms.user.application;
 
 
-import com.zerobase.cms.domain.common.UserType;
+import org.zerobase.cms.domain.common.UserType;
 import com.zerobase.cms.user.client.MailgunClient;
 import com.zerobase.cms.user.client.mailgun.SendMailForm;
 import com.zerobase.cms.user.domain.SignUpForm;

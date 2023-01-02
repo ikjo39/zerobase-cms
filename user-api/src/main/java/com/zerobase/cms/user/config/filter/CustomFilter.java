@@ -1,9 +1,7 @@
 package com.zerobase.cms.user.config.filter;
 
-import com.zerobase.cms.domain.common.UserVo;
-import com.zerobase.cms.domain.config.JwtAuthenticationProvider;
-import com.zerobase.cms.user.service.customer.CustomerService;
 import java.io.IOException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -11,6 +9,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+
+import org.zerobase.cms.domain.common.UserVo;
+import org.zerobase.cms.domain.config.JwtAuthenticationProvider;
+
+import com.zerobase.cms.user.service.customer.CustomerService;
+
 import lombok.RequiredArgsConstructor;
 
 @WebFilter(urlPatterns = "/customer/*")
@@ -23,7 +27,7 @@ public class CustomFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 		throws IOException, ServletException {
-		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
 		String token = httpServletRequest.getHeader("X-AUTH-TOKEN");
 		if (!jwtAuthenticationProvider.validateToken(token)) {
 			throw new ServletException("Invalid Access");
